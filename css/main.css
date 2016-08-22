@@ -1,0 +1,23 @@
+body{
+
+  background-image: url("coffee12.jpg");
+  font-family: sans-serif;
+  color: snow;
+  text-align: center;
+}
+
+h1{
+
+  color: snow;
+}
+#test {
+  position: fixed;;
+  border: 5px white;
+  background-color: saddlebrown;
+  padding: 10 px;
+  height:400px;
+  width: 800px;
+  margin-left: 260px;
+  color: snow;
+  text-align: left;
+}
