@@ -1,6 +1,6 @@
 alert("js works");
 
-var pos = 0, test, test_status, question, choices, choices, chA, chB, chC, chD, correct =0;
+var pos = 0, test, test_status, question, choices, choices, chA, chB, chC, chD, incorrect=0, correct =0;
 
 var questions = [
 
@@ -25,7 +25,7 @@ function renderQuestion () {
     test = _("test");
     if(pos >= questions.length){
 
-      test.innerHTML = "<h2> You got " +correct+" of "+questions.lenght+" questions correct </h2>";
+      test.innerHTML = "<h2> You got " +correct+" of "+questions.length+" questions correct </h2>";
       _(test_status).innerHTML= "Test COmpleted";
       return false;
     }
@@ -51,11 +51,22 @@ function renderQuestion () {
   	for(var i=0; i<choices.length; i++){
   		if(choices[i].checked){
   			choice = choices[i].value;
+
   		}
   	}
-  	if(choice == questions[pos][4]){
+  	if(choice == questions[pos][5]){
   		correct++;
+    /* pos++;*/
+        	renderQuestion();
   	}
+
+  if (choice != question[pos][5]) {
+      incorrect++;
+      /*pos++*/
+      renderQuestion();
+    }
+
+
   	pos++;
   	renderQuestion();
   }
